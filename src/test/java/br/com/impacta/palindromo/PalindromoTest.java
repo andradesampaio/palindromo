@@ -12,7 +12,8 @@ public class PalindromoTest {
 
         assertAll(
                 () -> assertEquals(true, palindromo.isPalindromo("abba")),
-                () -> assertEquals(true, palindromo.isPalindromo("bob"))
+                () -> assertEquals(true, palindromo.isPalindromo("bob")),
+                () -> assertEquals(true, palindromo.isPalindromo("Rotator"))
         );   
     }
 
@@ -20,8 +21,12 @@ public class PalindromoTest {
     @Test
     public void testePalindromoFailure() {
         Palindromo palindromo = new Palindromo();
-        boolean result = palindromo.isPalindromo("abbc");
-        assertEquals(false, result);
+        assertAll(
+                () -> assertEquals(false, palindromo.isPalindromo("abbc")),
+                () -> assertEquals(false, palindromo.isPalindromo("xyz")),
+                () -> assertEquals(false, palindromo.isPalindromo("Wonderful-fool"))
+        ); 
+
     }
 
 }
